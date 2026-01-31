@@ -1,0 +1,96 @@
+import { useEffect, useRef, useState } from 'react';
+
+interface Work {
+  title: string;
+  studio: string;
+  image: string;
+}
+
+const works: Work[] = [
+  {
+    title: 'Good Grief, Charlie Brown!',
+    studio: 'International Magic',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'
+  },
+  {
+    title: 'Cosmetics',
+    studio: 'Novembre Global',
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80'
+  },
+  {
+    title: 'Terrain',
+    studio: 'The Experience Machine',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80'
+  },
+  {
+    title: 'Fluid Dynamics',
+    studio: 'Nic Hamilton',
+    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80'
+  }
+];
+
+export function Works() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute('data-index'));
+            setVisibleItems((prev) => new Set([...prev, index]));
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -100px 0px' }
+    );
+
+    const items = sectionRef.current?.querySelectorAll('.work-item');
+    items?.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="py-16 md:py-24 px-6 md:px-12"
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          {works.map((work, index) => (
+            <div
+              key={work.title}
+              data-index={index}
+              className={`work-item group cursor-pointer transition-all duration-700 ${
+                visibleItems.has(index) 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-12'
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              <div className="relative overflow-hidden rounded-lg aspect-[4/3] mb-4">
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-lg md:text-xl font-medium group-hover:opacity-70 transition-opacity">
+                  {work.title}
+                </h3>
+                <p className="text-sm text-black/60">
+                  by {work.studio}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
