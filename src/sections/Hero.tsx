@@ -94,8 +94,8 @@ export function Hero({ scrollY }: HeroProps) {
         style={{
           width: windowSize.width ? `${currentWidth}px` : 'calc(100% - 32px)',
           height: 'auto',
-          aspectRatio: '16/9',
-          maxHeight: '70vh',
+          aspectRatio: windowSize.width < 640 ? '9/16' : '16/9',
+          maxHeight: windowSize.width < 640 ? 'none' : '76vh',
         }}
       >
         <video
@@ -123,7 +123,7 @@ export function Hero({ scrollY }: HeroProps) {
       {/* Content below video */}
       <div
         ref={textRef}
-        className="relative z-10 px-[100px] sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24"
+        className="relative z-10 px-10 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24"
         style={{ animationDelay: '0.3s' }}
       >
         <div className="mx-auto" style={{ maxWidth: '766px' }}>
