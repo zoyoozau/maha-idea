@@ -8,6 +8,7 @@ import { Works } from './sections/Works';
 import { Footer } from './sections/Footer';
 import { ContactDialog } from './components/ContactDialog';
 import { UpdatesDialog } from './components/UpdatesDialog';
+import { FloatingDecorations } from './components/FloatingDecorations';
 
 function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -26,10 +27,11 @@ function App() {
   return (
     <div className="min-h-screen bg-white text-black">
       <Header onContactClick={() => setIsContactOpen(true)} />
-      
+
       <main>
         <Hero scrollY={scrollY} />
-        <div className="relative z-10 bg-white">
+        <div className="relative z-10 bg-white overflow-hidden">
+          <FloatingDecorations scrollY={scrollY} />
           <Studios />
           <Collaboration onGetInTouch={() => setIsContactOpen(true)} />
           <WordCloud scrollY={scrollY} />
@@ -39,14 +41,14 @@ function App() {
 
       <Footer onGetUpdates={() => setIsUpdatesOpen(true)} />
 
-      <ContactDialog 
-        isOpen={isContactOpen} 
-        onClose={() => setIsContactOpen(false)} 
+      <ContactDialog
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
       />
-      
-      <UpdatesDialog 
-        isOpen={isUpdatesOpen} 
-        onClose={() => setIsUpdatesOpen(false)} 
+
+      <UpdatesDialog
+        isOpen={isUpdatesOpen}
+        onClose={() => setIsUpdatesOpen(false)}
       />
     </div>
   );

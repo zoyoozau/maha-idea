@@ -5,16 +5,12 @@ interface WordCloudProps {
 }
 
 const words = [
-  'fluid', 'terrain', 'listening', 'a platform', 'protein', 'universal',
-  'branching', 'generative', 'rendering', 'animation', 'structure', 'building',
-  'R&D', 'applications', 'here today gone tomorrow', 'decentralised', 'yes and no',
-  'BIPP', 'a moment', 'doing better', 'capturing', 'a window', 'bits',
-  'narrative spaces', 'coming together', 'not there', 'art', 'famous', 'global',
-  'virtual', 'generalist', 'engaged', 'exhibitions', 'unexpected', 'yottabytes',
-  'an edge', 'form', 'not an angel', 'points', 'meshed reality', 'platforms',
-  'iterating', 'what you don\'t need yet', 'learning', 'speculative', 'at home anywhere',
-  'in fashion', 'in sync', 'learning by making', 'culture', 'open', 'realtime',
-  'physical', 'cells', 'high resolution', 'dots', 'future audiences', 'all of the above', 'light'
+  'ตรัง', 'TRANG', 'CREATIVE LEARNING HUB', 'Maha iDEA', 'พื้นที่พัฒนาไอเดีย', 'Magnet',
+  'Idea Development Space', 'individual', 'idea', 'inspiration', 'ต้นทางของไอเดีย',
+  'ปล่อยพลังจากคน', 'คนตรัง', 'Collaboration', 'Digital', 'Art', 'Music', 'Film',
+  'Skills', 'Digital Literacy', 'Life Skills', 'Health', 'Community', 'Parima Hotel',
+  'PSU', 'Plan Toys', '30 space', 'ครอบครัวยิ้ม', 'RATCHATANEE', 'เรียนรู้',
+  'สร้างสรรค์', 'พัฒนา', 'อดีต', 'อนาคต', 'ผสมผสาน', 'ลงมือทำ', 'ห้องสมุดมีชีวิต'
 ];
 
 export function WordCloud({ scrollY }: WordCloudProps) {
@@ -27,7 +23,7 @@ export function WordCloud({ scrollY }: WordCloudProps) {
       const weights = ['font-light', 'font-normal', 'font-medium'];
       const sizeIndex = (index * 7 + Math.floor(Math.random() * 3)) % sizes.length;
       const weightIndex = (index * 3 + Math.floor(Math.random() * 2)) % weights.length;
-      
+
       return {
         size: sizes[sizeIndex],
         weight: weights[weightIndex],
@@ -44,25 +40,25 @@ export function WordCloud({ scrollY }: WordCloudProps) {
     const containerHeight = containerRect.height;
     const windowHeight = window.innerHeight;
 
-    const scrollProgress = Math.max(0, Math.min(1, 
+    const scrollProgress = Math.max(0, Math.min(1,
       (scrollY - containerTop + windowHeight) / (containerHeight + windowHeight)
     ));
 
     wordRefs.current.forEach((wordEl, index) => {
       if (!wordEl) return;
-      
+
       const wordProgress = (index / words.length);
       const offset = (scrollProgress - wordProgress) * 100;
       const opacity = Math.max(0.3, Math.min(1, 1 - Math.abs(offset) / 50));
       const translateY = offset * 0.3;
-      
+
       wordEl.style.opacity = String(opacity);
       wordEl.style.transform = `translateY(${translateY}px)`;
     });
   }, [scrollY]);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-16 md:py-24 px-6 md:px-12 min-h-[80vh] flex items-center"
     >

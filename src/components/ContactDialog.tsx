@@ -23,13 +23,13 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset after showing success
     setTimeout(() => {
       setIsSubmitted(false);
@@ -43,7 +43,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
       <DialogContent className="sm:max-w-lg bg-white border-black/10 p-0 overflow-hidden">
         <DialogHeader className="p-6 pb-0">
           <div className="flex items-center justify-between">
-            <DialogTitle className="text-2xl font-medium">Get in Touch</DialogTitle>
+            <DialogTitle className="text-2xl font-medium">ติดต่อเรา</DialogTitle>
             <button
               onClick={onClose}
               className="p-2 hover:bg-black/5 rounded-full transition-colors"
@@ -59,20 +59,20 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
                 <Send className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-medium mb-2">Message Sent!</h3>
-              <p className="text-black/60">We&apos;ll get back to you soon.</p>
+              <h3 className="text-xl font-medium mb-2">ส่งข้อความเรียบร้อย!</h3>
+              <p className="text-black/60">เราจะติดต่อกลับหาคุณเร็วๆ นี้</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-sm font-medium">
-                  Name
+                  ชื่อ
                 </Label>
                 <Input
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Your name"
+                  placeholder="ชื่อของคุณ"
                   required
                   className="border-black/20 focus:border-black focus:ring-black/20 rounded-lg"
                 />
@@ -80,7 +80,7 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
 
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm font-medium">
-                  Email
+                  อีเมล
                 </Label>
                 <Input
                   id="email"
@@ -95,13 +95,13 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
 
               <div className="space-y-2">
                 <Label htmlFor="message" className="text-sm font-medium">
-                  Message
+                  ข้อความ
                 </Label>
                 <Textarea
                   id="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your project..."
+                  placeholder="บอกเล่าเรื่องราวของคุณ..."
                   required
                   rows={4}
                   className="border-black/20 focus:border-black focus:ring-black/20 rounded-lg resize-none"
@@ -116,12 +116,12 @@ export function ContactDialog({ isOpen, onClose }: ContactDialogProps) {
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
                     <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
+                    กำลังส่ง...
                   </span>
                 ) : (
                   <span className="flex items-center gap-2">
                     <Send className="w-4 h-4" />
-                    Send Message
+                    ส่งข้อความ
                   </span>
                 )}
               </Button>

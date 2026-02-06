@@ -29,19 +29,25 @@ export function Collaboration({ onGetInTouch }: CollaborationProps) {
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-12">
-      <div 
+      <div
         ref={sectionRef}
         className="max-w-4xl mx-auto text-center opacity-0"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-12">
-          ONE is collaboration
+        <h2 className="text-3xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-8">
+          เครือข่ายความร่วมมือ (Partners)
         </h2>
-        
+
+        <p className="text-base md:text-lg text-black/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+          เทศบาลนครตรัง • มหาวิทยาลัยสงขลานครินทร์ (PSU) • PLAN TOYS • โรงแรมพาริมา
+          <br />
+          กลุ่มเด็กตรังอาสา • 30 space • ครอบครัวยิ้ม • ห้องสรรพของเก่า RATCHATANEE
+        </p>
+
         <button
           onClick={onGetInTouch}
           className="inline-flex items-center px-8 py-3 border-2 border-black rounded-full text-base md:text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
         >
-          Get in Touch
+          ติดต่อสอบถาม
         </button>
       </div>
     </section>

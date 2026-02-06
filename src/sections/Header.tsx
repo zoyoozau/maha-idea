@@ -8,20 +8,37 @@ export function Header({ onContactClick }: HeaderProps) {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 flex items-center justify-between">
         <a
           href="#"
-          className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-black hover:opacity-70 transition-opacity"
+          className="block hover:opacity-70 transition-opacity"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          One
+          <img
+            src="/logoมหาไอเดีย.png"
+            alt="Maha iDEA"
+            className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+          />
         </a>
 
         <button
           onClick={onContactClick}
-          className="studio-btn text-xs sm:text-sm md:text-base font-medium px-3 sm:px-4 py-1.5 sm:py-2 border border-black text-black rounded-full hover:bg-black hover:text-white transition-all duration-300"
+          className="studio-btn text-xs sm:text-sm md:text-base font-medium px-3 sm:px-4 py-1.5 sm:py-2 border rounded-full transition-all duration-300 hover:text-white"
+          style={{
+            borderColor: '#5301bb',
+            color: '#5301bb',
+            '--hover-bg': '#5301bb'
+          } as React.CSSProperties}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#5301bb';
+            e.currentTarget.style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'transparent';
+            e.currentTarget.style.color = '#5301bb';
+          }}
         >
-          Contact
+          ติดต่อเรา
         </button>
       </div>
     </header>

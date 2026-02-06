@@ -8,24 +8,24 @@ interface Work {
 
 const works: Work[] = [
   {
-    title: 'Good Grief, Charlie Brown!',
-    studio: 'International Magic',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'
+    title: 'ทักษะใหม่',
+    studio: 'Digital Skills (พี่หมู)',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80'
   },
   {
-    title: 'Cosmetics',
-    studio: 'Novembre Global',
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80'
+    title: 'แม่ปลูกผัก',
+    studio: 'Health & Learning',
+    image: 'https://images.unsplash.com/photo-1592419044706-39796d40f98c?w=800&q=80'
   },
   {
-    title: 'Terrain',
-    studio: 'The Experience Machine',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80'
+    title: 'Graphic Design',
+    studio: 'Canva Course (น้องเจน)',
+    image: 'https://images.unsplash.com/photo-1626785774573-4b799314346d?w=800&q=80'
   },
   {
-    title: 'Fluid Dynamics',
-    studio: 'Nic Hamilton',
-    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80'
+    title: 'Community Events',
+    studio: 'คนคอเดียวกัน',
+    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80'
   }
 ];
 
@@ -54,7 +54,7 @@ export function Works() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="py-16 md:py-24 px-6 md:px-12"
     >
@@ -64,11 +64,10 @@ export function Works() {
             <div
               key={work.title}
               data-index={index}
-              className={`work-item group cursor-pointer transition-all duration-700 ${
-                visibleItems.has(index) 
-                  ? 'opacity-100 translate-y-0' 
+              className={`work-item group cursor-pointer transition-all duration-700 ${visibleItems.has(index)
+                  ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-12'
-              }`}
+                }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               <div className="relative overflow-hidden rounded-lg aspect-[4/3] mb-4">

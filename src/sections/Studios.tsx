@@ -1,12 +1,10 @@
 import { useEffect, useRef } from 'react';
 
 const studios = [
-  { name: 'Nic Hamilton', url: 'https://nichamilton.com' },
-  { name: 'Traum Inc', url: 'https://trauminc.com' },
-  { name: 'Valtteri Laihanen', url: 'https://valtterilaihanen.com' },
-  { name: 'International Magic', url: 'https://internationalmagic.com' },
-  { name: 'The Experience Machine', url: 'https://theexperiencemachine.com' },
-  { name: 'Novembre Global', url: 'https://novembreglobal.com' },
+  { name: 'ดนตรี (Music Studio)', url: '#' },
+  { name: 'ศิลปะและภาพยนตร์ (Art & Film)', url: '#' },
+  { name: 'ดิจิทัล (Digital Studio)', url: '#' },
+  { name: 'สุขภาพและทักษะชีวิต (Life Skills)', url: '#' },
 ];
 
 export function Studios() {
@@ -38,7 +36,7 @@ export function Studios() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="py-16 md:py-24 px-6 md:px-12"
     >
