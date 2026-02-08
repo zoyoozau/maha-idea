@@ -8,7 +8,7 @@ export function Header({ onContactClick }: HeaderProps) {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 flex items-center justify-between">
         <a
           href="#"
-          className="block hover:opacity-70 transition-opacity"
+          className="block hover:opacity-70 transition-opacity ml-3 sm:ml-0"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -23,7 +23,7 @@ export function Header({ onContactClick }: HeaderProps) {
 
         <button
           onClick={onContactClick}
-          className="studio-btn text-xs sm:text-sm md:text-base font-medium px-3 sm:px-4 py-1.5 sm:py-2 border rounded-full transition-all duration-300 hover:text-white"
+          className="studio-btn text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 border rounded-full transition-all duration-300 hover:text-white -mr-1 sm:mr-0"
           style={{
             borderColor: '#5301bb',
             color: '#5301bb',
@@ -38,7 +38,7 @@ export function Header({ onContactClick }: HeaderProps) {
             e.currentTarget.style.color = '#5301bb';
           }}
         >
-          ติดต่อเรา
+          หนังสือคน
         </button>
       </div>
     </header>

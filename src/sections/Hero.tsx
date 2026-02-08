@@ -78,7 +78,11 @@ export function Hero({ scrollY }: HeroProps) {
     else if (width >= 768) padding = 64; // md:px-8 * 2
     else if (width >= 640) padding = 48; // sm:px-6 * 2
 
-    return Math.min(width - padding, 766);
+    // On tablet & desktop (>= 640px), use 60% of width
+    // Mobile (< 640px) stays unchanged with natural behavior/padding
+    const maxWidth = width >= 640 ? Math.floor(width * 0.60) : 766;
+
+    return Math.min(width - padding, maxWidth);
   };
 
   const startWidth = windowSize.width < 640
