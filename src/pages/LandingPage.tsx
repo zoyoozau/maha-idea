@@ -13,10 +13,9 @@ import { FloatingDecorations } from '../components/FloatingDecorations';
 // Props passed from App.tsx
 interface LandingPageProps {
     scrollY: number;
-    setIsUpdatesOpen: (isOpen: boolean) => void;
 }
 
-export function LandingPage({ scrollY, setIsUpdatesOpen }: LandingPageProps) {
+export function LandingPage({ scrollY }: LandingPageProps) {
     const location = useLocation();
     const [isMapOpen, setIsMapOpen] = useState(false);
 
@@ -77,13 +76,13 @@ export function LandingPage({ scrollY, setIsUpdatesOpen }: LandingPageProps) {
                             </div>
                         </div>
                     </div>
-                    <Collaboration onGetInTouch={scrollToHumanBooks} />
+                    <Collaboration />
                     <WordCloud scrollY={scrollY} />
                     <Works />
                 </div>
             </main>
 
-            <Footer onGetUpdates={() => setIsUpdatesOpen(true)} />
+            <Footer />
 
 
             {/* Map Modal */}

@@ -25,7 +25,6 @@ function App() {
           element={
             <LandingPage
               scrollY={scrollY}
-              setIsUpdatesOpen={setIsUpdatesOpen}
             />
           }
         />
