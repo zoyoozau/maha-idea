@@ -118,7 +118,7 @@ export function Hero({ scrollY }: HeroProps) {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/hero-video.mp4" type="video/mp4" />
+              <source src="/VideoIntroมหาไอเดีย.mp4" type="video/mp4" />
             </video>
 
             {/* Play button overlay */}
