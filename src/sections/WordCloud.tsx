@@ -5,11 +5,11 @@ interface WordCloudProps {
 }
 
 const words = [
-  'ตรัง', 'TRANG', 'CREATIVE LEARNING HUB', 'Maha iDEA', 'พื้นที่พัฒนาไอเดีย', 'Magnet',
+  'ตรัง', 'TRANG', 'CREATIVE LEARNING HUB', 'มหาiDea', 'พื้นที่พัฒนาไอเดีย', 'Magnet',
   'Idea Development Space', 'individual', 'idea', 'inspiration', 'ต้นทางของไอเดีย',
   'ปล่อยพลังจากคน', 'คนตรัง', 'Collaboration', 'Digital', 'Art', 'Music', 'Film',
   'Skills', 'Digital Literacy', 'Life Skills', 'Health', 'Community', 'Parima Hotel',
-  'PSU', 'Plan Toys', '30 space', 'ครอบครัวยิ้ม', 'RATCHATANEE', 'เรียนรู้',
+  'PSU', 'Plan Toys', 'ซน space', 'ครอบครัวยิ้ม', 'RATCHATANEE', 'เรียนรู้',
   'สร้างสรรค์', 'พัฒนา', 'อดีต', 'อนาคต', 'ผสมผสาน', 'ลงมือทำ', 'ห้องสมุดมีชีวิต'
 ];
 

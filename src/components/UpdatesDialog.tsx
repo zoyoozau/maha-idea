@@ -38,7 +38,7 @@ export function UpdatesDialog({ isOpen, onClose }: UpdatesDialogProps) {
       <DialogContent className="sm:max-w-lg bg-white border-black/10 p-0 overflow-hidden">
         <DialogHeader className="p-6 pb-0">
           <div className="flex items-center justify-between">
-            <DialogTitle className="text-2xl font-medium">ติดตามข่าวสาร Maha iDEA</DialogTitle>
+            <DialogTitle className="text-2xl font-medium">ติดตามข่าวสาร มหาiDea</DialogTitle>
             <button
               onClick={onClose}
               className="p-2 hover:bg-black/5 rounded-full transition-colors"
@@ -97,7 +97,7 @@ export function UpdatesDialog({ isOpen, onClose }: UpdatesDialogProps) {
               </Button>
 
               <p className="text-xs text-black/40 text-center">
-                เมื่อกดติดตาม คุณยอมรับที่จะรับอีเมลข่าวสารจาก Maha iDEA (ยกเลิกได้ตลอดเวลา)
+                เมื่อกดติดตาม คุณยอมรับที่จะรับอีเมลข่าวสารจาก มหาiDea (ยกเลิกได้ตลอดเวลา)
               </p>
             </form>
           )}

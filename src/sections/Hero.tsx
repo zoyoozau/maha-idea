@@ -148,7 +148,7 @@ export function Hero({ scrollY }: HeroProps) {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed md:leading-relaxed lg:leading-relaxed font-normal text-black">
-            <span className="font-medium">Maha iDEA TRANG</span> คือการรวมพลังของเมือง เพื่อทำให้ตรังดีขึ้น จากความคิดของคนตรังเอง
+            <span className="font-medium">มหาiDea TRANG</span> คือการรวมพลังของเมือง เพื่อทำให้ตรังดีขึ้น จากความคิดของคนตรังเอง
           </p>
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed md:leading-relaxed lg:leading-relaxed font-normal mt-4 sm:mt-5 md:mt-6 text-black">
             เปลี่ยนห้องสมุดแบบเดิม ให้กลายเป็น "พื้นที่พัฒนาไอเดียของเมือง" ที่ซึ่งความคิดหลากหลายจากคนต่างวัย ต่างอาชีพ จะถูกดึงเข้ามาแลกเปลี่ยนเรียนรู้

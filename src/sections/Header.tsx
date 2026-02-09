@@ -16,7 +16,7 @@ export function Header({ onContactClick }: HeaderProps) {
         >
           <img
             src="/logoมหาไอเดีย.png"
-            alt="Maha iDEA"
+            alt="มหาiDea"
             className="h-16 sm:h-20 md:h-24 w-auto object-contain"
           />
         </a>

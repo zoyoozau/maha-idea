@@ -1,10 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-interface CollaborationProps {
-  onGetInTouch: () => void;
-}
-
-export function Collaboration({ onGetInTouch }: CollaborationProps) {
+export function Collaboration() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,15 +36,17 @@ export function Collaboration({ onGetInTouch }: CollaborationProps) {
         <p className="text-base md:text-lg text-black/70 mb-12 max-w-2xl mx-auto leading-relaxed">
           เทศบาลนครตรัง • มหาวิทยาลัยสงขลานครินทร์ (PSU) • PLAN TOYS • โรงแรมพาริมา
           <br />
-          กลุ่มเด็กตรังอาสา • 30 space • ครอบครัวยิ้ม • ห้องสรรพของเก่า RATCHATANEE
+          กลุ่มเด็กตรังอาสา • ซน space • ครอบครัวยิ้ม • ห้องสรรพของเก่า RATCHATANEE
         </p>
 
-        <button
-          onClick={onGetInTouch}
+        <a
+          href="https://www.facebook.com/share/1C56T8ZFcm/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center px-8 py-3 border-2 border-black rounded-full text-base md:text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
         >
           ติดต่อสอบถาม
-        </button>
+        </a>
       </div>
     </section>
   );
