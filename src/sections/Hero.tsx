@@ -137,7 +137,7 @@ export function Hero({ scrollY }: HeroProps) {
       {/* Content below video */}
       <div
         ref={textRef}
-        className="relative z-10 px-10 sm:px-6 md:px-8 lg:px-12 pb-24 lg:pb-32 mt-20 sm:mt-0"
+        className="relative z-10 px-10 sm:px-6 md:px-8 lg:px-12 pb-24 lg:pb-32 mt-20 sm:mt-0 opacity-0"
         style={{ animationDelay: '0.3s' }}
       >
         <div className="mx-auto" style={{ maxWidth: '766px' }}>
