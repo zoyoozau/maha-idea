@@ -98,7 +98,7 @@ export function Hero({ scrollY }: HeroProps) {
     <section className="relative w-full bg-white">
       {/* Sticky Scroll Track - Controls duration of the sticky effect */}
       <div className="w-full h-[200vh] pt-0 sm:pt-0">
-        <div className="sticky top-0 h-screen w-full flex items-start sm:items-center justify-center pt-12 sm:pt-0 mt-0">
+        <div className="sticky top-0 h-screen w-full flex items-start justify-center pt-1 sm:pt-2 mt-0">
           {/* Resizable Video Container */}
           <div
             ref={videoContainerRef}
