@@ -84,6 +84,9 @@ export function Works() {
       className="py-16 md:py-24 px-6 md:px-12 bg-gray-50/50"
     >
       <div className="max-w-6xl mx-auto min-h-[500px]">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-[#5301bb] tracking-tight">
+          หนังสือคน
+        </h2>
         {loading ? (
           <div className="flex flex-col items-center justify-center h-96">
             <Loader2 className="w-12 h-12 animate-spin text-[#5301bb]" />
