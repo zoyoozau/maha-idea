@@ -23,7 +23,7 @@ export function FloatingDecorations({ scrollY }: FloatingDecorationsProps) {
         { id: '2', src: 'Artboard2.png', top: 12, left: 5, width: 'w-32 md:w-48', speed: -0.1, zIndex: 0 },
 
         // Middle section (Studios)
-        { id: '3', src: 'Artboard3.png', top: 25, right: 10, width: 'w-40 md:w-56', speed: 0.15, zIndex: 0 },
+        { id: '3', src: 'Artboard3.png', top: 25, right: 10, width: 'w-12 md:w-20', speed: 0.15, zIndex: 0 },
         { id: '4', src: 'Artboard4.png', top: 35, left: 8, width: 'w-48 md:w-64', speed: -0.15, zIndex: 0 },
 
         // Collaboration section
