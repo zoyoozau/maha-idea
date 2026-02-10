@@ -60,9 +60,14 @@ export function HumanBookFullPage() {
     const getImageUrl = (url: string) => {
         if (!url) return '';
         if (url.includes('drive.google.com')) {
-            const idMatch = url.match(/id=([^&]+)/);
-            if (idMatch) {
-                return `https://lh3.googleusercontent.com/d/${idMatch[1]}`;
+            // Try to extract ID from various Google Drive URL formats
+            const idMatch = url.match(/id=([a-zA-Z0-9_-]+)/);
+            const fileMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+
+            const id = idMatch ? idMatch[1] : (fileMatch ? fileMatch[1] : null);
+
+            if (id) {
+                return `https://lh3.googleusercontent.com/d/${id}`;
             }
         }
         return url;
@@ -250,6 +255,36 @@ export function HumanBookFullPage() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Additional Images Gallery */}
+                    {(getValue(selectedBook, 'รูปภาพตัวเองรูปที่ 2') || getValue(selectedBook, 'รูปภาพตัวเองรูปที่ 3')) && (
+                        <div className="bg-white rounded-[2rem] p-8 shadow-sm border border-gray-100 mt-8 mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                <span className="w-1.5 h-6 bg-[#5301bb] rounded-full mr-3"></span>
+                                ภาพเพิ่มเติม
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {getValue(selectedBook, 'รูปภาพตัวเองรูปที่ 2') && (
+                                    <div className="rounded-2xl overflow-hidden shadow-md aspect-video group cursor-pointer">
+                                        <img
+                                            src={getImageUrl(getValue(selectedBook, 'รูปภาพตัวเองรูปที่ 2'))}
+                                            alt="Additional 1"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                    </div>
+                                )}
+                                {getValue(selectedBook, 'รูปภาพตัวเองรูปที่ 3') && (
+                                    <div className="rounded-2xl overflow-hidden shadow-md aspect-video group cursor-pointer">
+                                        <img
+                                            src={getImageUrl(getValue(selectedBook, 'รูปภาพตัวเองรูปที่ 3'))}
+                                            alt="Additional 2"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
